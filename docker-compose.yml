@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  sop-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./dist :/usr/app/dist
+    env_file: ./.env
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    command: npm run start:dev
