@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
+import { ExperienceModule } from '../experience/experience.module'
 import { LoginGoogleModule } from '../login-google/login-google.module'
 import { MethodologyModule } from '../methodology/methodology.module'
 import { UserModule } from '../user/user.module'
@@ -17,7 +18,8 @@ import { UserModule } from '../user/user.module'
     }),
     LoginGoogleModule,
     UserModule,
-    MethodologyModule
+    MethodologyModule,
+    ExperienceModule
   ]
 })
 export class AppModule {}
