@@ -84,30 +84,18 @@ export class Methodology {
   }
 
   @Prop({
-    type: {
-      faculty: String,
-      student: String
-    }
+    type: [String]
   })
   @ApiProperty({
-    type: 'object',
-    properties: {
-      faculty: { type: 'string' },
-      student: { type: 'string' }
-    },
+    type: 'string',
     name: 'roles',
-    description: 'students and teacher roles',
-    example: {
-      faculty:
-        'Professor — é o educador profissional, o mediador do conhecimento, ajudará os estudantes na seleção e indicação de fontes e materiais de pesquisa e contribuir transformação das informações em conhecimento, além disto, é o responsável por promover debates, participação em atividades práticas em sala de aula.',
-      student:
-        'Estudante — é o personagem principal e ativo, deve previamente estudar o conteúdo disponibilizado pelo professor para que possar se preparar. É responsável por seus estudos antes da aulas, por participar dos debates e das atividades práticas propostas em sala de aula.'
-    }
+    description: 'roles in methodology',
+    example: [
+      'Professor — é o educador profissional, o mediador do conhecimento, ajudará os estudantes na seleção e indicação de fontes e materiais de pesquisa e contribuir transformação das informações em conhecimento, além disto, é o responsável por promover debates, participação em atividades práticas em sala de aula.',
+      'Estudante — é o personagem principal e ativo, deve previamente estudar o conteúdo disponibilizado pelo professor para que possar se preparar. É responsável por seus estudos antes da aulas, por participar dos debates e das atividades práticas propostas em sala de aula.'
+    ]
   })
-  roles: {
-    faculty: string
-    student: string
-  }
+  roles: [string]
 
   @Prop()
   @ApiProperty({
@@ -400,7 +388,7 @@ export class Methodology {
     about: string,
     timeToApply: { min: number; max: number },
     participants: { min: number; max: number },
-    roles: { faculty: string; student: string },
+    roles: [string],
     materials: string,
     principles: string,
     howToPlan: string,

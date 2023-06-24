@@ -229,30 +229,18 @@ export class CreateExperienceDto {
   observedMetrics?: string
 
   @Prop({
-    type: {
-      faculty: String,
-      student: String
-    }
+    type: [String]
   })
   @ApiProperty({
-    type: 'object',
-    properties: {
-      faculty: { type: 'string' },
-      student: { type: 'string' }
-    },
+    type: 'string',
     name: 'roles',
-    description: 'students and teacher roles',
-    example: {
-      faculty:
-        'Professor — é o educador profissional, o mediador do conhecimento, ajudará os estudantes na seleção e indicação de fontes e materiais de pesquisa e contribuir transformação das informações em conhecimento, além disto, é o responsável por promover debates, participação em atividades práticas em sala de aula.',
-      student:
-        'Estudante — é o personagem principal e ativo, deve previamente estudar o conteúdo disponibilizado pelo professor para que possar se preparar. É responsável por seus estudos antes da aulas, por participar dos debates e das atividades práticas propostas em sala de aula.'
-    }
+    description: 'roles in methodology',
+    example: [
+      'Professor — é o educador profissional, o mediador do conhecimento, ajudará os estudantes na seleção e indicação de fontes e materiais de pesquisa e contribuir transformação das informações em conhecimento, além disto, é o responsável por promover debates, participação em atividades práticas em sala de aula.',
+      'Estudante — é o personagem principal e ativo, deve previamente estudar o conteúdo disponibilizado pelo professor para que possar se preparar. É responsável por seus estudos antes da aulas, por participar dos debates e das atividades práticas propostas em sala de aula.'
+    ]
   })
-  roles?: {
-    faculty: string
-    student: string
-  }
+  roles: [string]
 
   @Prop()
   @ApiProperty({
@@ -283,6 +271,15 @@ export class CreateExperienceDto {
       'FC é uma metodologia em que a instrução direta é dada fora da sala de aula principalmente por meio de vídeos, e o tempo de aula pode ser usado para discussões mais profundas sobre o assunto, colaboração entre colegas e aconselhamento personalizado pelo professor. As atividades estimulam os estudantes a colocarem seus conhecimentos em prática, desenvolvendo assim, habilidades e competências [7].'
   })
   considerations?: string
+
+  @Prop()
+  @ApiProperty({
+    type: 'string',
+    name: 'programmingLanguages',
+    description: 'programming languages taught to students',
+    example: 'C++, Java, Python, JavaScript, Perl'
+  })
+  programmingLanguages?: string
 
   @Prop()
   @ApiProperty({
